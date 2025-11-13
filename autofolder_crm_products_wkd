@@ -1,0 +1,5 @@
+void automation.autofolder_crm_products_wkd(String id_producto)
+{
+	producto = zoho.crm.getRecordById("Products", id_producto);
+	info producto;
+}
