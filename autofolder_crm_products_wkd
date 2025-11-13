@@ -3,9 +3,8 @@ void automation.autofolder_crm_products_wkd(String id_producto)
 	// DATOS DE LA CONEXION
 	header = Map();
 	header.put("Accept","application/vnd.api+json");
-	connection= "workdrivecon";
 	id_folder_padre= "999fe2ab8cab966634f62ae98711f5e348439";
-	url= "\"https://www.zohoapis.com/workdrive/api/v1/files/" + id_folder_padre +"/files";
+	url= "https://www.zohoapis.com/workdrive/api/v1/files/" + id_folder_padre + "/files?";
 	
 	
 	producto = zoho.crm.getRecordById("Products", id_producto);
@@ -15,7 +14,7 @@ void automation.autofolder_crm_products_wkd(String id_producto)
     	url: url
     	type: GET
     	headers: header
-		connection: connection
+		connection: "workdrivecom"
     ];
 	info folders;
 }
