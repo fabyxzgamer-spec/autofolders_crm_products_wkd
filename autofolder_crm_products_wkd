@@ -3,8 +3,26 @@ void automation.autofolder_crm_products_wkd(String id_producto)
 	// LISTAS DE MARCAS DE FOLDER MARCAS
 	lista_datos = list();
 	lista_datos.add(["ALBATROSS", "v1it9fe2d59101cfc4871b0d5a85546eea90a"]);
-	lista_datos.add(["MARCA2", "id2"]);
-	lista_datos.add(["MARCA3", "id3"]);
+	lista_datos.add(["BLANCAPRESS", "v1it98410b6c4e3064b15ac48cc2e21c1f46a"]);
+	lista_datos.add(["BROTHER", "v1it953ad79813f284e7fb34e2cfd90cd8ea8"]);
+	lista_datos.add(["CAMEO", "v1it95911733638e947bf998d43e065d27bfc"]);
+	lista_datos.add(["CENSI", "v1it957730d11e0e94e45ae0890992d6f310b"]);
+	lista_datos.add(["ESTRETELAS POWERTEX", "v1it9351f8a1e07c9471ea083b8bd74979e89"]);
+	lista_datos.add(["EPSON", "v1it99beef04f17714f108013ff6929d97f15"]);
+	lista_datos.add(["GENSY", "v1it9b66d30cb585049cfb1f55c771bd39f37"]);
+	lista_datos.add(["GRAND", "v1it90f4c33bc17f542b69eab6fad34d0cb73"]);
+	lista_datos.add(["HOTRONIX", "v1it9b5a4a3aa5c78464c939bcb6f73739dca"]);
+	lista_datos.add(["HP", "v1it905c0f61c14f6444a86aaa68986da530b"]);
+	lista_datos.add(["JACK", "v1it9893b619e4d8840f3891f32f1b35223a3"]);
+	lista_datos.add(["JANOME", "v1it92c81ea05cdd64186be152bf73936e7da"]);
+	lista_datos.add(["KANSAI SPECIAL", "v1it9c30ed836b8ac4dd295ed16865f529ac2"]);
+	lista_datos.add(["RACING", "v1it9e2e76321083f43568ffa3834f2ca848a"]);
+	lista_datos.add(["RICOMA", "v1it9c81db506c8cb4ae58be4140695332bb3"]);
+	lista_datos.add(["RINCON WILLPEX", "v1it93811b8a3e5104ba387a33d68ae106431"]);
+	lista_datos.add(["SIRUBA", "v1it9522c5858ef114ba0baf9370510ed27d7"]);
+	lista_datos.add(["STIROLUX", "v1it9b000c938e7f44848a4b0b68f3fae7031"]);
+	lista_datos.add(["WILLPEX", "v1it9bdfd0be5b08e4723af82c96f53286fb6"]);
+	lista_datos.add(["ZGM", "v1it9d539ad266eff4c2f93afdfd66aefd684"]);
 	marcas = list();
 	for each item in lista_datos
 	{
@@ -21,4 +39,4 @@ void automation.autofolder_crm_products_wkd(String id_producto)
 	id_folder_padre= "999fe2ab8cab966634f62ae98711f5e348439";
 	producto = zoho.crm.getRecordById("Products", id_producto);
 	Marca= producto.get("Marca");
-}mejo
+}
