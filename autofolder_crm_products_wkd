@@ -1,7 +1,7 @@
 void automation.autofolder_crm_products_wkd(String id_producto)
 {
 	// LISTAS DE MARCAS DE FOLDER MARCAS
-	lista_datos = list();
+	lista_datos = List();
 	lista_datos.add(["ALBATROSS", "v1it9fe2d59101cfc4871b0d5a85546eea90a"]);
 	lista_datos.add(["BLANCAPRESS", "v1it98410b6c4e3064b15ac48cc2e21c1f46a"]);
 	lista_datos.add(["BROTHER", "v1it953ad79813f284e7fb34e2cfd90cd8ea8"]);
@@ -23,20 +23,29 @@ void automation.autofolder_crm_products_wkd(String id_producto)
 	lista_datos.add(["STIROLUX", "v1it9b000c938e7f44848a4b0b68f3fae7031"]);
 	lista_datos.add(["WILLPEX", "v1it9bdfd0be5b08e4723af82c96f53286fb6"]);
 	lista_datos.add(["ZGM", "v1it9d539ad266eff4c2f93afdfd66aefd684"]);
-	marcas = list();
+	marcas_list = List();
 	for each item in lista_datos
 	{
-    	m = map();
+    	m = Map();
     	m.put("name", item.get(0));
 		m.put("id", item.get(1));
-    	marcas.add(m);
+    	marcas_list.add(m);
 	}
-	info marcas;
-
 	// DATOS DE LA CONEXION
 	header = Map();
 	header.put("Accept","application/vnd.api+json");
 	id_folder_padre= "999fe2ab8cab966634f62ae98711f5e348439";
 	producto = zoho.crm.getRecordById("Products", id_producto);
-	Marca= producto.get("Marca");
+	Marca_name= producto.get("Marca");
+	// BUSQUEDA DE MARCA CORRESPONDIENTE
+	for each marca in marcas_list
+    {
+		name_marca= marca.get("name");
+		if ( Marca_name == name_marca ) 
+        {
+			
+			info "LA MARCA ES:" + Marca_name;
+			break;
+        }
+    }
 }
