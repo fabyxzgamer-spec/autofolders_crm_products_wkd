@@ -36,6 +36,10 @@ void automation.autofolder_crm_products_wkd(String id_producto)
 	header.put("Accept","application/vnd.api+json");
 	id_folder_padre= "999fe2ab8cab966634f62ae98711f5e348439";
 	producto = zoho.crm.getRecordById("Products", id_producto);
+	Product_Name= producto.get("Product_Name");
+	Product_Code= producto.get("Product_Code");
+	name_folder= Product_Name + " - ART." + Product_Code;
+	info producto;
 	Marca_name= producto.get("Marca");
 	// BUSQUEDA DE MARCA CORRESPONDIENTE
 	for each marca in marcas_list
@@ -43,8 +47,9 @@ void automation.autofolder_crm_products_wkd(String id_producto)
 		name_marca= marca.get("name");
 		if ( Marca_name == name_marca ) 
         {
-			
-			info "LA MARCA ES:" + Marca_name;
+			id_marca= marca.get("id");
+			create_folder_art= zoho.workdrive.createFolder(name_folder, id_marca, "workdrivecom");
+			info create_folder_art;
 			break;
         }
     }
