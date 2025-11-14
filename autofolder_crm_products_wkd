@@ -1,16 +1,24 @@
 void automation.autofolder_crm_products_wkd(String id_producto)
 {
-	// BUSCARDOR DE FOLDER MARCAS
-	marcas_list= List();
-	marca_map1= Map();
-	marca_map1.put("name","ALBATROSS");
-	marca_map1.put("id","v1it9fe2d59101cfc4871b0d5a85546eea90a");
-	marcas_list.add(marca_map1);
-	info marcas_list;
+	// LISTAS DE MARCAS DE FOLDER MARCAS
+	lista_datos = list();
+	lista_datos.add(["ALBATROSS", "v1it9fe2d59101cfc4871b0d5a85546eea90a"]);
+	lista_datos.add(["MARCA2", "id2"]);
+	lista_datos.add(["MARCA3", "id3"]);
+	marcas = list();
+	for each item in lista_datos
+	{
+    	m = map();
+    	m.put("name", item.get(0));
+		m.put("id", item.get(1));
+    	marcas.add(m);
+	}
+	info marcas;
+
 	// DATOS DE LA CONEXION
 	header = Map();
 	header.put("Accept","application/vnd.api+json");
 	id_folder_padre= "999fe2ab8cab966634f62ae98711f5e348439";
 	producto = zoho.crm.getRecordById("Products", id_producto);
 	Marca= producto.get("Marca");
-}
+}mejo
